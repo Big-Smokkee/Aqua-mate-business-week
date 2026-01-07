@@ -7,7 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 const auth = require("./middleware/auth");
 const userRoutes = require("./routes/userRoutes");
 const sensorRoutes = require("./routes/sensorRoutes");
-
+const reportRoutes = require("./routes/reportRoutes");
 
 const app = express();
 const PORT = 5000;
@@ -32,7 +32,7 @@ app.use("/api/auth", authRoutes);
 app.use("/uploads", express.static("uploads")); // MUST
 app.use("/api/user", userRoutes);
 app.use("/api", sensorRoutes);
-
+app.use("/api/reports", reportRoutes);
 
 // Protected route
 app.get("/api/dashboard", auth, (req, res) => {
