@@ -151,7 +151,7 @@
     setInterval(updateTime, 1000);
     updateTime();
     function loadSensorData() {
-      fetch("http://10.242.164.163:5000/api/sensor-data/latest")
+      fetch("http://10.203.26.163:5000/api/sensor-data/latest")
         .then(res => res.json())
         .then(data => {
           if (!data) return;
