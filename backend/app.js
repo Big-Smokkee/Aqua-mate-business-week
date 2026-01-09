@@ -33,6 +33,8 @@ app.use("/uploads", express.static("uploads")); // MUST
 app.use("/api/user", userRoutes);
 app.use("/api", sensorRoutes);
 app.use("/api/reports", reportRoutes);
+app.use("/api/alerts", require("./routes/alertRoutes"));
+
 
 // Protected route
 app.get("/api/dashboard", auth, (req, res) => {
